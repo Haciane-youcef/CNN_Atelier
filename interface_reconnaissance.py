@@ -1,7 +1,7 @@
 """
 ╔══════════════════════════════════════════════════════════════════════╗
 ║   RECONNAISSANCE CHIFFRES & LETTRES — Interface CNN Unifié           ║
-║   Projet IA M1 — Dr Khalid Gaber                                     ║
+║                                                                      ║
 ║                                                                      ║
 ║   Modèle : CNN 36 classes (0-9 + A-Z)                                ║
 ║   Utilisation :                                                      ║
@@ -217,11 +217,11 @@ class App:
         hdr = tk.Frame(self.root, bg=C['accent2'], pady=10)
         hdr.pack(fill='x')
         tk.Label(hdr,
-                 text="🧠  CNN — Reconnaissance de Caractères  (0-9 + A-Z)",
+                 text="  CNN — Reconnaissance de Caractères  (0-9 + A-Z)",
                  font=('Consolas', 13, 'bold'),
                  bg=C['accent2'], fg='#ffffff').pack(side='left', padx=20)
         tk.Label(hdr,
-                 text="Projet IA M1 — Dr Khalid Gaber",
+                 text="  ",
                  font=('Consolas', 9),
                  bg=C['accent2'], fg='#ccd6ff').pack(side='right', padx=20)
 
@@ -445,7 +445,7 @@ class App:
     def _update_model_badge(self, loaded, name=''):
         if loaded:
             self.model_badge.config(
-                text=f"✅  Chargé : {os.path.basename(name)}",
+                text=f"  Chargé : {os.path.basename(name)}",
                 fg=C['success'])
         else:
             self.model_badge.config(text="✗  Non chargé", fg=C['error'])
@@ -508,7 +508,7 @@ class App:
             self.root.update()
             self.model = load_model_from_path(path)
             self._update_model_badge(True, path)
-            self._set_status(f"✅ Modèle chargé : {path}", C['success'])
+            self._set_status(f" Modèle chargé : {path}", C['success'])
         except Exception as e:
             self._update_model_badge(False)
             messagebox.showerror("Erreur chargement", str(e))
